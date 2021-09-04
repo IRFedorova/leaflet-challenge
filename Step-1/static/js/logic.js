@@ -14,7 +14,7 @@ var graymap = L.tileLayer(
   }
 );
 
-// We create the map object with options.
+// map object with options
 var map = L.map("map", {
   center: [
     40.7, -94.5
@@ -22,14 +22,15 @@ var map = L.map("map", {
   zoom: 3
 });
 
-// Then we add our 'graymap' tile layer to the map.
+// add 'graymap' tile layer to the map.
 graymap.addTo(map);
 
-// Here we make an AJAX call that retrieves our earthquake geoJSON data.
-d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson").then(function(data) {
+// // make an AJAX call that retrieves our earthquake geoJSON data (1 month data)
+d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson").then(function(data) {
 
-  // This function returns the style data for each of the earthquakes we plot on
-  // the map. We pass the magnitude of the earthquake into two separate functions
+
+  // we take coordinates and mag from json - the earthquake file above
+  // We pass the magnitude of the earthquake into two separate functions
   // to calculate the color and radius.
   function styleInfo(feature) {
     return {
@@ -43,13 +44,15 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
     };
   }
 
-  // This function determines the color of the marker based on the magnitude of the earthquake.
+  //the color of the marker (circles on the map) based on the magnitude of the earthquake.
   function getColor(depth) {
     switch (true) {
     case depth > 90:
-      return "#ea2c2c";
+      // return "#ea2c2c";
+      return "#e92684";
     case depth > 70:
-      return "#ea822c";
+      // return "#ea822c"; 
+      return "#e95d26"; 
     case depth > 50:
       return "#ee9c00";
     case depth > 30:
@@ -61,17 +64,18 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
     }
   }
 
+  // Checking if magnitude is not 0
   // This function determines the radius of the earthquake marker based on its magnitude.
   // Earthquakes with a magnitude of 0 were being plotted with the wrong radius.
   function getRadius(magnitude) {
     if (magnitude === 0) {
       return 1;
     }
-
     return magnitude * 4;
   }
 
-  // Here we add a GeoJSON layer to the map once the file is loaded.
+
+  // add a GeoJSON layer to the map once the file is loaded.
   L.geoJson(data, {
     // We turn each feature into a circleMarker on the map.
     pointToLayer: function(feature, latlng) {
@@ -101,14 +105,15 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
   legend.onAdd = function() {
     var div = L.DomUtil.create("div", "info legend");
 
+    // legend discription
     var grades = [-10, 10, 30, 50, 70, 90];
     var colors = [
       "#98ee00",
       "#d4ee00",
       "#eecc00",
       "#ee9c00",
-      "#ea822c",
-      "#ea2c2c"
+      "#e95d26",
+      "#e92684"
     ];
 
     // Looping through our intervals to generate a label with a colored square for each interval.
@@ -119,6 +124,6 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
     return div;
   };
 
-  // Finally, we our legend to the map.
+  // put legend to the map.
   legend.addTo(map);
 });
