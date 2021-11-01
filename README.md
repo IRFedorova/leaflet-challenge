@@ -8,7 +8,7 @@ The Javascript-Leaflet library, HTML, CSS, Bootstrap, and Javascript were used i
 The project was divided into two steps with different levels of complexity.
 
 Step 1: A single base layer and one set of data were used
-![Leaflet](Step-2/images/W0.JPG)
+![Leaflet](Step-1/images/W0.JPG)
 
 Base layer: mapbox.streets-basic
 Data layer Source and Data:
