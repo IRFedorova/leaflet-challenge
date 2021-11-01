@@ -1,6 +1,4 @@
 # leaflet-challenge
-Import & Visualize the Data
-
 
 The goal of the project is to display multiple and interactive maps with the location and magnitude of earthquakes during the last 7 days around the world. 
 
@@ -8,15 +6,15 @@ The Javascript-Leaflet library, HTML, CSS, Bootstrap, and Javascript were used i
 
 The project was divided into two steps with different levels of complexity.
 
-Step 1: A single base layer and one set of data were used
+## Step 1: A single base layer and one set of data were used
 ![Leaflet](Step-1/images/W0.JPG)
 
-Base layer: mapbox.greyscale
-Data layer Source and Data:
-Source: United States Geological Survey (USGS)
-Data: All Earthquakes for the last 7 days
+Base layer: mapbox.greyscale <br>
+Data layer Source and Data: <br>
+Source: United States Geological Survey (USGS)<br>
+Data: All Earthquakes for the last 7 days<br>
 
-Step 2: Map to illustrate the relationship between tectonic plates and seismic activity
+## Step 2: Map to illustrate the relationship between tectonic plates and seismic activity
 Multiple optional and interactive base layers were included. 
 
 ![Leaflet](Step-2/images/w17.gif)
