@@ -11,7 +11,7 @@ The project was divided into two steps with different levels of complexity.
 Step 1: A single base layer and one set of data were used
 ![Leaflet](Step-1/images/W0.JPG)
 
-Base layer: mapbox.streets-basic
+Base layer: mapbox.greyscale
 Data layer Source and Data:
 Source: United States Geological Survey (USGS)
 Data: All Earthquakes for the last 7 days
@@ -19,18 +19,18 @@ Data: All Earthquakes for the last 7 days
 Step 2: Map to illustrate the relationship between tectonic plates and seismic activity
 Multiple optional and interactive base layers were included. 
 
-![Leaflet](Step-2/images/W17.GIF)
+![Leaflet](Step-2/images/w17.gif)
 
--An additional dataset and plot were included and they can be activated and deactivated by the user.
+An additional dataset and plot were included and they can be activated and deactivated by the user.
 Data markers reflects the magnitude of the earthquake by their size and and depth of the earth quake by color. 
 Earthquakes with higher magnitudes should appear larger and earthquakes with greater depth should appear darker in color.
 The map includes popups that provide additional information about the earthquake when a marker is clicked.
 Legends created that will provide context for the map data.
 
 Base layer:
-mapbox.greyscale
-mapbox.satellite
-mapbox.outdoors
+- mapbox.greyscale
+- mapbox.satellite
+- mapbox.outdoors
 
 Data: Earthquakes - Last 7 days - All Earthquakes
 Layer 2: Tectonic Plates
