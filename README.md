@@ -10,8 +10,7 @@ The project was divided into two steps with different levels of complexity.
 ![Leaflet](Step-1/images/W0.JPG)
 
 Base layer: mapbox.greyscale <br>
-Data layer Source and Data: <br>
-Source: United States Geological Survey (USGS)<br>
+Data Layer Source: United States Geological Survey (USGS)<br>
 Data: All Earthquakes for the last 7 days<br>
 
 ## Step 2: Map to illustrate the relationship between tectonic plates and seismic activity
@@ -30,14 +29,14 @@ Base layer:
 - mapbox.satellite
 - mapbox.outdoors
 
-Data: Earthquakes - Last 7 days - All Earthquakes
-Layer 2: Tectonic Plates
+Data: All Earthquakes - Last 7 days <br>
+Layer 2: Tectonic Plates <br>
 Source: Hugo Ahlenius, GIS-and-Cartography Consultant https://github.com/fraxen/tectonicplates
 Libraries Required (already included in the index.html file)
 D3 JavaScript, Leaflet
 
 
-Instructions Steps
+## Instructions Steps
 
 - Download or clone all the files contained in this repo.
 - Create a Mapbox Token
